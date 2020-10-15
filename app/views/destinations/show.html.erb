@@ -1,4 +1,11 @@
 destinations show
 
 <h2><%= @destination.name %></h2>
-<%= @destination.name %>
+
+<% @destination.most_recent.each do |post|%>
+<div><%= link_to post.title, post_path(post) %></div>
+<%end%>
+
+<p>Featured Post:</p> <%= link_to @post.title, post_path(@post) %>
+
+<p>Average Age:</p> <%= @destination.bloggers_average%>
