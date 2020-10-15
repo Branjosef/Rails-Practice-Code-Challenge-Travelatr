@@ -6,5 +6,8 @@ posts show
 <p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
 
 <h3>Likes: <%= @post.likes %></h3>
-<button <% @post.likes = @post.likes + 1 %> <% @post.save %> <% post_path(@post) %> >
+
+<%= button_to 'Like', like_path(@post), method: :put %> <br>
+
+
 

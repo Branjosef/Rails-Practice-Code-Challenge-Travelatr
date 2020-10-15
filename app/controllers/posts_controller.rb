@@ -41,16 +41,16 @@ class PostsController < ApplicationController
         else
             render :edit
         end
-
-        # def like
-        #     @post = Post.find(params[:id])
-        #     @post.likes = @post.like + 1
-        #     @post.save
-        #     redirect_to post_path(@post)
-        # end
-
-
     end
+
+
+    def like
+        @post = Post.find(params[:id])
+        #byebug
+        #@post.likes = @post.like += 1
+        @post.increment!(:likes)
+        redirect_to post_path(@post)
+       end
 
 
     private
