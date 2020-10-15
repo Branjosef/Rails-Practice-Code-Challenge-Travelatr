@@ -5,7 +5,10 @@ class DestinationsController < ApplicationController
     end
 
     def show
-
+        @destination = Destination.find(params[:id])
+        if !@destination.getting_likes.empty?
+            @post = @destination.highest_likes
+        end
     end
 
     def new
