@@ -1,0 +1,10 @@
+posts show
+<h1><%= @post.title %></h1>
+<br>
+<p><%= @post.content.tr('[]""', '') %></p>
+<p><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
+
+<h3>Likes: <%= @post.likes %></h3>
+<button <% @post.likes = @post.likes + 1 %> <% @post.save %> <% post_path(@post) %> >
+
